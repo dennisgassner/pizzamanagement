@@ -1,0 +1,22 @@
+type Pizza {
+  id: Int !
+  title: String
+  description: String
+  price: Float
+  image: String
+}
+
+input NewPizza {
+  title: String !
+  description: String !
+  price: Float !
+}
+
+type Query {
+    allPizzas: [Pizza]
+}
+
+type Mutation {
+    newPizza(input:NewPizza): Pizza !
+}
+

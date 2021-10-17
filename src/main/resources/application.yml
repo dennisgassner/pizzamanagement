@@ -1,0 +1,51 @@
+server:
+    port: 8090
+    servlet:
+        contextPath: /pizzamanagement
+graphql:
+    servlet:
+        mapping: /graphql
+        enabled: true
+        corsEnabled: true
+graphiql:
+    mapping: /graphiql
+    endpoint: /pizzamanagement/graphql
+    enabled: true
+    pageTitle: PizzaManagement
+
+org.dennis:
+        mongo:
+            host: localhost
+            port: 27017
+            database: admin
+            credentials:
+                user: mongoadmin
+                password: secret
+                database: admin
+---
+spring:
+        profiles: prod
+server:
+    port: 8090
+    servlet:
+        contextPath: /pizzamanagement
+graphql:
+    servlet:
+        mapping: /graphql
+        enabled: true
+        corsEnabled: true
+graphiql:
+    mapping: /graphiql
+    endpoint: /pizzamanagement/graphql
+    enabled: true
+    pageTitle: PizzaManagement
+
+org.dennis:
+    mongo:
+        host: deliverymongo
+        port: 27017
+        database: admin
+        credentials:
+            user: mongoadmin
+            password: secret
+            database: admin
