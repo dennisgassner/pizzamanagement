@@ -2,16 +2,6 @@ server:
     port: 8090
     servlet:
         contextPath: /pizzamanagement
-graphql:
-    servlet:
-        mapping: /graphql
-        enabled: true
-        corsEnabled: true
-graphiql:
-    mapping: /graphiql
-    endpoint: /pizzamanagement/graphql
-    enabled: true
-    pageTitle: PizzaManagement
 
 org.dennis:
         mongo:
@@ -29,16 +19,6 @@ server:
     port: 8090
     servlet:
         contextPath: /pizzamanagement
-graphql:
-    servlet:
-        mapping: /graphql
-        enabled: true
-        corsEnabled: true
-graphiql:
-    mapping: /graphiql
-    endpoint: /pizzamanagement/graphql
-    enabled: true
-    pageTitle: PizzaManagement
 
 org.dennis:
     mongo:

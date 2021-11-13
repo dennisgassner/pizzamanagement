@@ -1,19 +1,21 @@
 package org.dennis.pizzamanagement.controller;
 
-import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import org.dennis.pizzamanagement.database.PizzaService;
 import org.dennis.pizzamanagement.model.NewPizza;
 import org.dennis.pizzamanagement.model.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
+import org.springframework.stereotype.Controller;
 
-@Service
-public class MutationResolver implements GraphQLMutationResolver {
+@Controller
+public class MutationResolver {
 
     @Autowired
     PizzaService pizzaService;
 
-    public Pizza newPizza(NewPizza newPizza) {
+    @MutationMapping
+    public Pizza newPizza(@Argument NewPizza newPizza) {
         return pizzaService.create(newPizza).orElse(new Pizza());
     }
 

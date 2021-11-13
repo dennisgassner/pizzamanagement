@@ -1,19 +1,20 @@
 package org.dennis.pizzamanagement.controller;
 
-import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import org.dennis.pizzamanagement.database.PizzaService;
 import org.dennis.pizzamanagement.model.Pizza;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
+import org.springframework.graphql.data.method.annotation.QueryMapping;
+import org.springframework.stereotype.Controller;
 import java.util.List;
 
-@Service
-public class QueryResolver implements GraphQLQueryResolver {
+@Controller
+public class QueryResolver
+{
 
     @Autowired
     PizzaService pizzaService;
 
+    @QueryMapping
     public List<Pizza> allPizzas() {
         return pizzaService.getAll();
     }
